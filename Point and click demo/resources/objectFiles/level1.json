@@ -1,0 +1,46 @@
+{
+	"scriptVersion": "v1.2",
+	"level" : {
+		"name": "Level 1",
+		"description": "point and click first level",
+		"width": 1600,
+		"height": 800
+	},
+	"gameObjects" : [
+    	{
+    		"_id": "1",
+    		"name": "mouse",
+    		"description": "The mouse to move around.",
+	        "actionCompMod": "pandcmodules.components.MouseActionComponent",
+	        "actionCompClass": "MouseActionComponent",
+	        "physicsCompMod": "pandcmodules.components.MousePhysicsComponent",
+	        "physicsCompClass": "MousePhysicsComponent",
+	        "animationCompMod": "pandcmodules.components.MouseAnimationComponent",
+	        "animationCompClass": "MouseAnimationComponent",
+	        "startPositionX": 0,
+	        "startPositionY": 0,
+	        "spritesheetFill": "WHITE",
+	        "spriteSheetImages": [
+	        	{
+	        		"type": "PYGAME_SURFACE",
+	        		"label": "standing",
+	        		"file": "",
+	        		"x": 0,
+	        		"y": 0,
+	        		"width": 15,
+	        		"height": 15
+	        	}
+	        ],
+	        "animationProperties": {
+	        	"width": 15,
+	        	"height": 15
+	        },
+	        "terminalVelocity": 8,
+	        "jumpVelocity": 16,
+	        "leftRightMaxVelocity": 6,
+	        "collisionEnabled": 1,
+	        "proximity": -1,
+	        "controllingEntity": 0
+	    }
+	]
+}
