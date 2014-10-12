@@ -11,5 +11,7 @@ class PlayerActionComponent:
         Runs the update to the logic component.
     """
     def determineAction(self, entity):
+        #entity.deltaX = 50
+        #entity.deltaY = 50
         logger = LoggerUtil()
         logger.info("PlayerActionComponent")
