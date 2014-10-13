@@ -26,6 +26,8 @@ class MouseActionComponent:
                 entity.deltaX = mouseX
                 entity.deltaY = mouseY
         mouse1, _, mouse3 = pygame.mouse.get_pressed()
+        playerEntity.actionComponent.isToMove = False
         if mouse3:
-            playerEntity.physicsComponent.goalX = entity.deltaX
-            playerEntity.physicsComponent.goalY = entity.deltaY
+            playerEntity.actionComponent.isToMove = True
+            playerEntity.actionComponent.goalX = entity.deltaX
+            playerEntity.actionComponent.goalY = entity.deltaY
