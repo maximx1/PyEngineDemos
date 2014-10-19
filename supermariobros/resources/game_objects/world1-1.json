@@ -1,0 +1,170 @@
+{
+	"scriptVersion": "v1.3",
+	"level" : {
+		"name": "Level 1",
+		"description": "The first level of the demo.",
+		"width": 9085,
+		"height": 600
+	},
+	"components": [
+		{
+			"_id": "1",
+			"desc": "Basic keyboard input",
+	        "componentModule": "pyplatformerengine.components.DefaultPlatformerActionComponent",
+	        "componentClass": "DefaultPlatformerActionComponent"
+	    },
+	    {
+			"_id": "2",
+			"desc": "Basic plaformer character physics",
+	        "componentModule": "pyplatformerengine.components.LocationComponent",
+	        "componentClass": "LocationComponent"
+	    },
+	    {
+			"_id": "3",
+			"desc": "Basic animation",
+	        "componentModule": "pyplatformerengine.components.AnimationComponent",
+	        "componentClass": "AnimationComponent"
+	    },
+	    {
+			"_id": "4",
+			"desc": "Blank controller input",
+	        "componentModule": "pyplatformerengine.components.BlankActionComponent",
+	        "componentClass": "BlankActionComponent"
+	    },
+	    {
+			"_id": "5",
+			"desc": "Motionless physics",
+	        "componentModule": "pyplatformerengine.components.MotionlessPhysicsComponent",
+	        "componentClass": "MotionlessPhysicsComponent"
+	    },
+	    {
+			"_id": "6",
+			"desc": "Jump component",
+	        "componentModule": "pyplatformerengine.components.JumpComponent",
+	        "componentClass": "JumpComponent"
+	    },
+	    {
+			"_id": "7",
+			"desc": "Gravity component",
+	        "componentModule": "pyplatformerengine.components.BasicGravityComponent",
+	        "componentClass": "BasicGravityComponent"
+	    },
+	   	{
+	   		"_id": "8",
+	   		"desc": "Non-Collision Objects",
+	   		"componentModule": "smbmodules.components.NonCollisionPhysicsComponent",
+	   		"componentClass": "NonCollisionPhysicsComponent"
+	   	}
+	],
+	"gameObjects" : [
+    	{
+    		"_id": "1",
+    		"name": "Background",
+    		"description": "The background of the world",
+			"actors": {
+    			"updateActors": [
+  					{
+	    				"_id": "AAAD",
+	    				"name": "action",
+	    				"components": [ "4" ]
+	    			},
+	    			{
+	    				"_id": "AAAE",
+	    				"name": "physics",
+	    				"components": [ "8" ],
+	    				"state": {
+							"startPositionX": 0,
+					        "startPositionY": 0,
+					        "terminalVelocity": 1,
+					        "jumpVelocity": 1,
+					        "leftRightMaxVelocity": 3,
+					        "proximity": -1
+					   	}
+	    			}
+	    		],
+	    		"drawActors": [
+	    			{
+	    				"_id": "AAAF",
+	    				"name": "animation",
+	    				"components": [ "3" ],
+	    				"state": {
+					        "spritesheetFill": "WHITE",
+					        "spriteSheetImages": [
+					        	{
+									"type": "SPRITE_IMG",
+									"label": "standing",
+									"file": "resources/textures/world1-1background.png",
+									"x": 0,
+									"y": 0,
+									"width": 3392,
+									"height": 224
+								}
+					        ],
+					        "animationProperties": {
+					        	"width": 9085,
+					        	"height": 600
+					        }
+	    				}
+	    			}
+	    		]
+		    }
+	    },
+    	{
+    		"_id": "2",
+    		"name": "playableCharacter",
+    		"description": "The main character of the game.",
+    		"actors": {
+    			"updateActors": [
+  					{
+	    				"_id": "AAAA",
+	    				"name": "action",
+	    				"components": [ "1" ],
+	    				"controllingEntity": 1,
+						"state": {
+					        "leftRightMaxVelocity": 6
+						}
+	    			},
+	    			{
+	    				"_id": "AAAB",
+	    				"name": "physics",
+	    				"components": [ "2" ],
+	    				"state": {
+	    					"startPositionX": 50,
+					        "startPositionY": 20,
+					        "terminalVelocity": 8,
+					        "jumpVelocity": 16,
+					        "collisionEnabled": 1,
+					        "proximity": -1
+					   	}
+	    			}
+	    		],
+	    		"drawActors": [
+	    			{
+	    				"_id": "AAAC",
+	    				"name": "animation",
+	    				"components": [ "3" ],
+	    				"state": {
+					        "spritesheetFill": "BLUE",
+					        "spriteSheetImages": [
+					        	{
+					        		"type": "PYGAME_SURFACE",
+					        		"label": "standing",
+					        		"file": "",
+					        		"x": 0,
+					        		"y": 0,
+					        		"width": 15,
+					        		"height": 15
+					        	}
+					        ],
+					        "animationProperties": {
+					        	"width": 15,
+					        	"height": 15
+					        }
+	    				}
+	    			}
+	    		]
+		    },
+			"cameraFocus": 1
+	    }	    
+	]
+}
