@@ -1,1 +1,1 @@
-__all__=["NonCollisionPhysicsComponent"]
+__all__=["NonCollisionPhysicsComponent", "AnimationComponent"]
